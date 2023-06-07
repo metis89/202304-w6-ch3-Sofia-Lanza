@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 import { Character } from "../types/character";
 
 type PropsType = {
@@ -5,25 +6,26 @@ type PropsType = {
 };
 
 export function CharacterCard({ item }: PropsType) {
-  function handleClick() {
-    console.log("cum");
-  }
+  const handleClick = () => {
+    console.log(`Personaje ${item.name} ha morido`);
+  };
 
   return (
     <li className="character col" key={item.id}>
-      <div className="card charactercard">
+      <div className="card character__card">
         <img
           src={item.image}
-          alt={item.name}
-          className={`characterpicture card-img-top ${
+          width={250}
+          alt={`${item.name} ${item.family}`}
+          className={`character__picture card-img-top ${
             !item.isAlive ? "dead" : ""
           }`}
         />
         <div className="card-body">
-          <h2 className="charactername card-title h4">
+          <h2 className="character__name card-title h4">
             {item.name} {item.family}
           </h2>
-          <div className="characterinfo">
+          <div className="character__info">
             <ul className="list-unstyled">
               <li>Edad: {item.age}</li>
               <li>
@@ -36,35 +38,56 @@ export function CharacterCard({ item }: PropsType) {
               </li>
             </ul>
           </div>
-          <div className="characteroverlay">
+          <div className="character__overlay">
             <ul className="list-unstyled">
-              $
-              {item.regnalYears ? (
-                <li>Años de reinado: ${item.regnalYears} </li>
+              {item.hasOwnProperty("reignyears") ? (
+                <li>Años de reinado: {item.regnalYears}</li>
               ) : (
                 ""
               )}
-              ${item.regnalYears ? <li>Arma: ${item.weapon} </li> : ""}$
-              {item.skill ? <li>Destreza: ${item.skill} </li> : ""}$
-              {item.characterToAdvise ? (
-                <li>Asesora a: ${item.characterToAdvise} </li>
+              {item.hasOwnProperty("weapon") ? (
+                <li>Arma: {item.weapon}</li>
               ) : (
                 ""
               )}
-              ${item.brownNose ? <li>Peloteo: ${item.brownNose} </li> : ""}
+              {item.hasOwnProperty("skill") ? (
+                <li>Destreza: {item.skill}</li>
+              ) : (
+                ""
+              )}
+              {item.hasOwnProperty("characterToAdvise") ? (
+                <li>Asesora a: {item.characterToAdvise}</li>
+              ) : (
+                ""
+              )}
+              {item.hasOwnProperty("brownNose") ? (
+                <li>Peloteo:{item.brownNose} </li>
+              ) : (
+                ""
+              )}
             </ul>
-            <div className="characteractions">
-              <button className="characteraction btn">habla</button>
-              <button className="characteraction btn" onClick={handleClick}>
+            <div className="character__actions">
+              <button className="character__action btn">habla</button>
+              <button className="character__action btn" onClick={handleClick}>
                 muere
               </button>
             </div>
           </div>
         </div>
-        <i className="emoji">👑</i>
-        <i className="emoji">🗡️</i>
-        <i className="emoji">🗿</i>
-        <i className="emoji">🛡️</i>
+        {item.hasOwnProperty("reignyears") ? <i className="emoji">👑</i> : ""}
+        {item.hasOwnProperty("weapon") ? <i className="emoji">🗡️</i> : ""}
+        {item.hasOwnProperty("characterToAdvise") &&
+        !item.hasOwnProperty("brownNose") ? (
+          <i className="emoji">🗿</i>
+        ) : (
+          ""
+        )}
+        {item.hasOwnProperty("brownNose") &&
+        item.hasOwnProperty("characterToAdvise") ? (
+          <i className="emoji">🛡️</i>
+        ) : (
+          ""
+        )}
       </div>
     </li>
   );

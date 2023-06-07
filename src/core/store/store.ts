@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import phoneSlicer from "../../feature/phone/redux/phone.slice";
+import characterSlice from "../../characters/redux/character.slice";
 
 export const store = configureStore({
   reducer: {
-    characters: characterSlicer,
+    characters: characterSlice,
   },
 });
 
