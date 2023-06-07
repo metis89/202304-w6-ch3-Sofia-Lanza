@@ -1,0 +1,57 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Joffrey",
+      "family": "Baratheon",
+      "age": 18,
+      "reignyears": 3,
+      "isAlive": true,
+      "speech": "You are all going to die",
+      "image": "https://estaticos-cdn.prensaiberica.es/clip/aa7bc202-588a-4cfb-b06a-ec48f04f67b2_16-9-discover-aspect-ratio_default_0.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jaime",
+      "family": "Lannister",
+      "age": 33,
+      "weapon": "sword",
+      "isAlive": true,
+      "speech": "I strike first, and ask questions later",
+      "skill": 8,
+      "image": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/series-television/10-lecciones-de-vida-de-jaime-lannister/136189889-1-esl-ES/10-lecciones-de-vida-de-Jaime-Lannister.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Daenerys",
+      "family": "Targaryen",
+      "age": 29,
+      "weapon": "dragons",
+      "isAlive": true,
+      "speech": "I strike first, and ask questions later",
+      "skill": 3,
+      "image": "https://media.glamour.es/photos/616fa6ed38abdad04f455c98/master/w_1600%2Cc_limit/583819.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Tyrion",
+      "family": "Lannister",
+      "age": 31,
+      "isAlive": true,
+      "speech": "I think I will die soon",
+      "characterToAdvise": "Daenerys",
+      "image": "https://static.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/tyrion-lannister-1920.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Broon",
+      "family": "Unknown",
+      "age": 45,
+      "isAlive": "true",
+      "characterToServe": "warrior",
+      "speech": "I am based",
+      "brownNose": 2,
+      "image": "https://i.redd.it/list-of-characters-who-came-from-nothing-but-made-their-way-v0-eo513p5bmgy91.jpg?width=1146&format=pjpg&auto=webp&s=14c80e16975467bbb716ee657e2f75ad40f674fc"
+    }
+  ]
+}
